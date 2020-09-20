@@ -1,0 +1,23 @@
+package com.chinsofti.bank.test;
+
+public class TestOperator {
+
+	public static void main(String[] args) {
+		int a=2;
+		int b=3;
+		System.out.println("a/b="+a/b);
+		System.out.println("a%b="+a%b);
+		int r=a<b?a:b;
+		System.out.println("a<b?a:b="+r);
+		int c,e;
+		c=a++;//先取值，再增加
+		e=++b;//先增加，再取值
+		System.out.println("c="+c+"  a="+a);
+		System.out.println("e="+e+"  b="+b);
+		//++,--不论在前还是后，总是对变量本身进行了加1或减1的操作
+		System.out.println("Test "+" operator");
+		
+
+	}
+
+}

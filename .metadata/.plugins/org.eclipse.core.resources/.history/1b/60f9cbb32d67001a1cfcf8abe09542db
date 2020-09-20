@@ -1,0 +1,30 @@
+package inherit;
+
+public class PetTest {
+
+	public static void main(String[] args) {
+		
+        Dog dog1=new Dog("旺财", 90, 80, "京巴");
+        /*dog1.print();
+        Pet pet1=dog1;
+        pet1.print();*/
+        
+        /*dog1.eatSomrthing("狗粮");
+        System.out.println(dog1.getName()+"有"+dog1.getLegs()+"条腿");*/
+	
+	
+	   Penguin peg1=new Penguin("小飞侠",66,88,"男");
+	   /*Pet pet2=peg1;
+	   peg1.print();  
+	   pet2.print();*/
+	    
+	    Cat cat1 =new Cat("坚果",666,888);
+	   
+	  System.out.println("------------");
+	   
+	   Master mst = new Master("张三");
+	   mst.feed(cat1, "小鱼干");
+	   mst.feed(dog1,"狗粮");//Pet pet=dog1
+	   mst.feed(peg1, "小鱼");//Pet pet=peg1
+}
+}

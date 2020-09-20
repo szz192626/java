@@ -1,0 +1,15 @@
+package encolope;
+
+public class TestEmployee {
+
+	public static void main(String[] args) {
+		Employee2 employee2=new Employee2("·½·½",25,"Å®",6000);
+        employee2.print();
+        employee2.printcomeFullYear();
+        Manager manager=new Manager("ÁúÌÚ",26,"ÄÐ",8000,0.4,10000);
+        manager.print();
+        manager.printcomeFullYear();
+        
+	}
+
+}

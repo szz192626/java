@@ -1,0 +1,17 @@
+package interfac;
+
+public class TheIfProoFingerprinterDoor extends Door implements LockFingerprint,Bell
+
+	@Override
+	public void open() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void close() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

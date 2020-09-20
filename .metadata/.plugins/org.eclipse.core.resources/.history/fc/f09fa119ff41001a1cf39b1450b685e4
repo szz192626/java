@@ -1,0 +1,29 @@
+package com.chinsofti.bank.test;
+
+import way.PersonalAccount;
+
+public class TestByReference {
+   public void test(PersonalAccount a) {
+	   a.deposit(2000);
+	   System.out.println("test方法中a的方法余额="+a.getBalance());
+   }
+	public static void main(String[] args) {
+		PersonalAccount a=new PersonalAccount("3333","123",1900);
+		TestByReference t=new TestByReference();
+		t.test(a);
+		System.out.println("main方法中a的余额="+a.getBalance());
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

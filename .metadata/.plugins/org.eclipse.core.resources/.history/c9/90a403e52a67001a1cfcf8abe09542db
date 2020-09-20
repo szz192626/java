@@ -1,0 +1,38 @@
+package inherit;
+
+public class Penguin extends Pet {
+	private String sex;
+
+	public String getSex() {
+		return sex;
+	}
+
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+
+	public Penguin() {
+
+		System.out.println("子类Penguin的无参构造方法");
+
+	}
+
+	public Penguin(String name, int health, int love, String sex) {
+
+		super(name, health, love);
+		this.sex = sex;
+		System.out.println("子类Penguin的有参构造方法");
+	}
+
+	@Override
+	public void eatsomething(String food) {
+		
+		
+	}
+
+	@Override
+	public int Leg() {
+		
+		return 0;
+	}
+}

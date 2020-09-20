@@ -1,0 +1,92 @@
+package iodemo;
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+/**
+ * 输入字节流
+ */
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+import org.junit.Test;
+
+public class Demo04_BufferedFileInputOutputStream {
+
+//	用代码实现拷贝功能
+	@Test
+	public void copyByteFile() {
+		
+		
+		File file1 =new File("d:\\demo\\video.mp4");
+		File file2=new File("d:\\demo\\videocopyed.mp4");
+		if(!file2.exists()) {
+			try {
+				file2.createNewFile();
+			}catch (IOException e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+		}
+		FileInputStream fis=null;
+		FileOutputStream fos=null;
+		
+		BufferedInputStream bis=null;
+		BufferedOutputStream bos=null;
+		
+		
+		try {
+			 fis=new FileInputStream(file1);
+//			 缓冲流包装节点输入流--文件字节输入流
+			 bis=new BufferedInputStream(fis);
+			 
+			 fos=new FileOutputStream(file2);
+//			 包装节点输出流--文件字节输出流
+			 bos=new BufferedOutputStream(fos);
+			 
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			
+			
+		} 
+		long begin=System.currentTimeMillis();
+		
+/**
+ * 一个是读，一个是写
+ */
+		byte[] bytes=new byte[1024*1024];
+		int len=-1;
+		try {
+			while((len=bis.read(bytes))!=-1) {
+				bos.write(bytes,0,len);
+			}
+			bos.flush();
+		}catch (IOException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		long end=System.currentTimeMillis();
+		System.out.println("拷贝共用时："+(end-begin)+"毫秒");
+		
+		if (fis != null) {
+			try {
+				fis.close();
+			} catch (IOException e) {
+
+				e.printStackTrace();
+			}
+		}
+		if (fos != null) {
+			try {
+				fos.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+		}
+		
+	}
+	
+}

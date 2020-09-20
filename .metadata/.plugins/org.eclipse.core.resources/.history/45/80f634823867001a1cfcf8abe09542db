@@ -1,0 +1,12 @@
+package inherit;
+
+public class TestCat {
+
+	public static void main(String[] args) {
+		Pet pet =new Cat();
+		Cat cat =new Cat("ÄÌ²è",66,88);
+        Master master =new Master();
+        master.feed(pet, "Ğ¡Óã¸É");
+	}
+
+}

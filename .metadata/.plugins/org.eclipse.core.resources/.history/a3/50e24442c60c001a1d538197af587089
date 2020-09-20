@@ -1,0 +1,18 @@
+package MXDX;
+
+public class car {
+   String brand ;
+	int wheelNum;
+	String oil;
+	public void printinformation(){
+		System.out.println("-------");
+		System.out.printf("品牌%s,轮子个数%d,燃油类型%s,brand,wheelNum,oil");
+	}
+	
+	
+	
+	
+	
+	
+	
+}

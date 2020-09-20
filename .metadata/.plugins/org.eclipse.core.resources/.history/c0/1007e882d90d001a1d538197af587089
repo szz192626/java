@@ -1,0 +1,13 @@
+package MXDX;
+
+public class Rectangle {
+	double edgeNum;
+	double wideNum;
+
+	public void printarea() {
+		double area = edgeNum * wideNum;
+		System.out.println("该长方形的面积为：" + area);
+
+	}
+
+}

@@ -1,0 +1,156 @@
+package iodemo;
+/**
+ * 输入字符流
+ */
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+import org.junit.Test;
+
+public class Demo_03FileReaderWriter {
+
+	@Test
+	public  void TestReader() {
+
+		
+//		File file1=new File("d:\\demo\\o2.txt");
+		File file1=new File("d:"+File.separator+"Case"+
+                             File.separator+"helloword3.txt");
+//		创建一个文件输入字符流,（和源文件存储时使用的字符编码方式相关），
+//		FileReader  ISO-XXXX-1编码（和ANSI兼容）
+		
+		FileReader fr=null;
+		try {
+			fr=new FileReader(file1);
+		}catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+//		开始读文件
+		char[] chars=new char[6];
+		int len=-1;
+		
+
+		try {
+			while((len=fr.read(chars))!=-1) {
+			 System.out.println("本次读出"+len+"个字符");
+			 for(int i=0;i<len;i++) {
+				 System.out.println(chars[i]+"  ");
+			 }
+			 System.out.println("");
+//		     System.out.println(new String(bytes,0,end));
+			}
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		
+//		将对应的流关闭
+		if(fr!=null) {
+		try {
+			fr.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		}
+		}
+	
+	/**
+	 * 文件输出流
+	 */
+	
+	
+	@Test
+	public void TestWriter() {
+		File file1=new File("d:"+File.separator+"Case"+
+	           File.separator+"helloword6");
+		if(!file1.exists()) {
+			try {
+			file1.createNewFile();
+			}catch (IOException e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+		}
+//		生成输出流
+		
+		
+		FileWriter fw=null;
+		
+			try {
+				fw=new FileWriter(file1);//new FileWriter(file1,true)将内容添加到文件的最后
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		
+//		byte[] bytes=new byte[] {'i','j','k','l'};
+		char[] chars=null;
+		chars="我是一名学生，名字叫孙周舟".toCharArray();
+		try {
+
+			fw.write(chars);
+			System.out.println("刚才我添加了"+new String(chars));
+			
+		}catch(IOException e) {
+			e.printStackTrace();
+		}
+		
+		if(fw!=null) {
+			try {
+				fw.close();
+			}catch (IOException e) {
+				// TODO: handle exception
+	             e.printStackTrace(); 			
+				
+			}
+		}
+		
+}
+	
+	@Test
+	public void copyByteFile() {
+		File file1 =new File("d:\\demo\\video.mp4");
+		File file2=new File("d:\\demo\\videocopyed.mp4");
+		if(!file2.exists()) {
+			try {
+				file2.createNewFile();
+			}catch (IOException e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+		}
+		FileInputStream fis=null;
+		FileOutputStream fos=null;
+		
+		try {
+			 fis=new FileInputStream(file1);
+			 fos=new FileOutputStream(file2);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+/**
+ * 一个是读，一个是写
+ */
+		byte[] bytes=new byte[1024];
+		int len=-1;
+		try {
+			while((len=fis.read(bytes))!=-1) {
+				fos.write(bytes,0,len);
+			}
+		}catch (IOException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		
+		
+	}
+	
+}

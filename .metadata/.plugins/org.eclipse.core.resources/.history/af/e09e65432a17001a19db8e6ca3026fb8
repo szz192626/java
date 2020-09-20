@@ -1,0 +1,13 @@
+package MXDX;
+
+public class Manager {
+    String username ="sunzz";
+    String password = "sun192626";
+    public String show() {
+    	return"ÓÃ»§Ãû"+username+"ÃÜÂë"+password;
+    
+    }
+	
+	
+	
+}

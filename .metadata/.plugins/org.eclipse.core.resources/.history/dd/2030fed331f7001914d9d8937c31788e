@@ -1,0 +1,24 @@
+package Dm;
+
+public class JP {
+
+	public static void main(String[] args) {
+		
+		boolean  dj=true;
+		boolean  swc=true;
+		boolean  wj=false;
+		double   a=500;
+		if(dj) {
+			System.out.println("票价"+0.5*a);
+		}if (swc) {
+			System.out.println("票价"+0.8*a);
+		}else {
+		}if(wj){
+				System.out.println("票价"+0.9*a);
+		}else{
+					System.out.println("票价"+0.7*a);
+				
+				
+		}
+	}
+}

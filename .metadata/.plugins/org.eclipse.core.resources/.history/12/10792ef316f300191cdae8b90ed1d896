@@ -1,0 +1,19 @@
+package D5;
+
+public class SSD {
+
+	public static void main(String[] args,) {
+		int hsd=37;
+		double  ssd=5/9*HSD+32;
+		System.out.println(ssd);
+		System.out.println(hsd);
+		
+		
+		
+		
+		
+		
+
+	}
+
+}

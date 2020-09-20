@@ -1,0 +1,34 @@
+package threaddemo;
+
+class MyThread implements Runnable {
+
+	@Override
+	public void run() {
+		for (int i = 1; i <= 100; i += 2) {
+			System.out.println(Thread.currentThread().getName() + 
+					"1到100的所有奇数" + i);
+		}
+	}
+}
+
+public class TestRunnable {
+	public static void main(String[] args) {
+		MyThread myThread = new MyThread();
+		Thread th1 = new Thread(myThread, "第一线程:");
+		th1.start();
+		try {
+			th1.join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("主线程:");
+		for (int i = 1; i <= 100; i += 2) {
+
+			System.out.println("1到100的所有偶数" + i);
+
+		}
+
+	}
+
+}

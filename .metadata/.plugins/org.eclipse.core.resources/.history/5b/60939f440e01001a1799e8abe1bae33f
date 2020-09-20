@@ -1,0 +1,40 @@
+package XH;
+
+import java.util.Scanner;
+
+public class Three {
+
+	public static void main(String[] args) {
+		boolean  flag=true;//    //false
+		Scanner   scanner=new  Scanner(System.in);
+		int i=0;
+	    do { 
+	    	flag=false;//因为有此在输入正确之后才不循环//(不写）
+			System.out.println("请选择：");
+		System.out.println("\t  1.客户管理");
+		System.out.println("\t  2.购物结算");
+		System.out.println("\t  3.真情回馈");
+		System.out.println("\t  4:注销");
+			i=scanner.nextInt();
+			switch(i) {
+			
+			case 1:
+			System.out.println("管理");
+			break;
+			case 2:
+				System.out.println("价钱");
+			break;
+			case 3:
+				System.out.println("礼品选择");
+			break;
+			case 4:
+				System.out.println("已经注销账户");
+			break;
+		default:
+				System.out.println("你输得不对");	
+				flag=true;//因为有此在输入不对情况下才循环
+			}
+			}while(flag==true);
+		}
+
+}

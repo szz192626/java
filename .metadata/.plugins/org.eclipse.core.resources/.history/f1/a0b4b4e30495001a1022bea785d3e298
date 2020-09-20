@@ -1,0 +1,56 @@
+package jdbcdemo;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+import org.junit.Test;
+
+import java.sql.Statement;
+
+public class Demo02_TestStatement {
+      @Test
+      public void TestStatement() {
+    	  try {
+  			Class.forName("com.mysql.jdbc.Driver");
+  		} catch (ClassNotFoundException e) {
+  			// TODO Auto-generated catch block
+  			e.printStackTrace();
+  		}
+  		String url = "jdbc:mysql://localhost:3306/myjavadb";
+  		Connection connection = null;
+  		Statement statement=null;
+  		try {
+  			connection = DriverManager.getConnection(url, "root", "root123");
+  			System.out.println(connection);
+  			
+  		} catch (SQLException e) {
+  			// TODO Auto-generated catch block
+  			e.printStackTrace();
+  		}
+  		String sql="insert  into customers (id,name,birthday) values('3','wanger','1999-1-8')";
+  		
+        if(connection != null) {
+        	try {
+				statement= connection.createStatement();
+				System.out.println(statement.execute(sql));
+				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+        }
+  		
+  		
+  		if (connection != null) {
+  			try {
+  				connection.close();
+  			} catch (SQLException e) {
+  				// TODO Auto-generated catch block
+  				e.printStackTrace();
+  			}
+  		}
+  		
+  		
+      }
+}

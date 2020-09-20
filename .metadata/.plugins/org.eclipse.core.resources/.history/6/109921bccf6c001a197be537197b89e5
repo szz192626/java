@@ -1,0 +1,17 @@
+package interfac;
+
+public class TestHandset {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        Network handset1 =new AptitudeHandst("华为","智能机");
+        handset1.hashCode();
+        handset1.networkConn();
+        TheakePictures theakePictures =new AptitudeHandst("苹果","智能机");
+        theakePictures.takePictare();
+        
+		PlayWiring handset2 =new CommonHandset("联想", "普通手机");
+        handset2.play();
+        System.out.println("正在播放  "+ PlayWiring.content);
+        }
+}

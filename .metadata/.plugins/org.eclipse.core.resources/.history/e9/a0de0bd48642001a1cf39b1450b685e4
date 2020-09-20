@@ -1,0 +1,10 @@
+package com.chinsofti.bank.test;
+
+public class TestOperator {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

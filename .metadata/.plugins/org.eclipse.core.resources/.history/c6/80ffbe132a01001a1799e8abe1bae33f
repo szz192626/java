@@ -1,0 +1,21 @@
+package XH;
+
+import Dm.score;
+
+public class array {
+
+	public static void main(String[] args) {
+		double[] scores;
+		scores=new double[40];
+		scores[0]=85;
+		scores[19]=65;
+		scores[39]=90;
+		scores[40]=58;
+		
+		
+		
+		
+		
+	}
+
+}

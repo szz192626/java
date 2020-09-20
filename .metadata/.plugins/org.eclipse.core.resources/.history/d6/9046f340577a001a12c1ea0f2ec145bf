@@ -1,0 +1,23 @@
+package generics;
+
+import java.sql.Date;
+
+public class GenericsMethod {
+	
+    public  <E> E getExactOne(E[] arr,int index){
+    	return arr[index];
+    }
+	public static void main(String[] args) {
+		Date[] datearr=new Date[5];
+		datearr[0]=new Date(00, 7, 7);
+		datearr[1]=new Date(11,8,9);
+		datearr[2]=new Date(89, 6, 28);
+		datearr[3]=new Date(99, 8, 9);
+		datearr[4]=new Date(22, 10, 10);
+		
+		GenericsMethod gmc=new  GenericsMethod();
+		
+		Date datetemp=gmc.getExactOne(datearr, 2);
+		System.out.println(datetemp);
+	}
+}

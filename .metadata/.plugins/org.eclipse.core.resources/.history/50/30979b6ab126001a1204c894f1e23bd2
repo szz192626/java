@@ -1,0 +1,38 @@
+package supermarket1;
+
+import XH.While;
+
+public class Add {
+         int No=0;
+         int Number;
+         String name;
+         double weight;
+         double unitprice;
+         While(true){
+        	 System.out.print("待输入记录的编号（输入“-1”退出：");
+        	 int num =in.nextInt();
+        	 if (num!=-1) {
+        		 System.out.print(" *编号：");
+        		 No = in.nextInt();
+        		 System.out.print(" *名称：");
+        		 name = in.next();
+        		 System.out.print(" *重量");
+        		 weight =in.next();
+        		 System.out.print(" *单价");
+        		 unitprice=in.nextDouble();
+        		 System.out.print(" *数量");
+        		 unitprice =in.nextDouble();
+        		Number = in.nextInt();
+        		Good newData = new 
+        				\
+        		 
+        		 
+        		 
+        		 
+        		 
+        		 
+				
+			}
+         }
+        
+}

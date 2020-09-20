@@ -1,0 +1,15 @@
+package interfac;
+
+public class TestHandset {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        Handset handset1 =new AptitudeHandst("华为","智能机");
+        handset1.sendlnfo();
+        handset1.info();
+        
+		Handset handset2 =new CommonHandset("联想", "普通手机");
+        handset2.info();
+        handset2.sendlnfo();
+        }
+}

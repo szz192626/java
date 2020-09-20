@@ -1,0 +1,36 @@
+package jdbcdemo;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+
+import org.junit.Test;
+
+public class TestDButils {
+	
+	@Test
+	public void TestIquire() {
+		Connection connection=null;
+        PreparedStatement statement=null;
+        ResultSet rs=null;
+        try {
+            connection=DBUtils.getConnection();
+            statement=connection.prepareStatement("select 序号,标题名称,作者,创建时间  from news where 序号=1");
+            rs=statement.executeQuery();
+
+            while (rs.next()){
+                System.out.println("---------------------");
+                System.out.println(rs.getInt(1));
+                System.out.println(rs.getString(2));
+                System.out.println(rs.getString(3));
+                System.out.println(rs.getDate(4));
+            }
+        }catch (ClassNotFoundException| SQLException e){
+            e.printStackTrace();
+        }finally {
+            DBUtils.closeResource(connection, statement);
+        }
+	}
+
+}

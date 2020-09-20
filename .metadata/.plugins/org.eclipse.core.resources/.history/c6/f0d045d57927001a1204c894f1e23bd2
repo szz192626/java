@@ -1,0 +1,16 @@
+package supermarket1;
+//π∫ŒÔ≥µ¿‡
+public class Shopping {
+	private static final int maxLen=10;
+	         static   int Len=0;
+	   private static Good[] data = new Good[maxLen];
+	   public static int getLen() {
+		   return Len;
+		    }	
+	   public  static Good[] getData() {
+		   return data;
+		   
+	   }
+	  
+	
+}

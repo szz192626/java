@@ -1,0 +1,89 @@
+package jdbcdemo;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import org.junit.Test;
+
+public class Demo03_TestResultSet {
+	@Test
+	public void TestResultSet() {
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String url = "jdbc:mysql://localhost:3306/myjavadb";
+		Connection connection = null;
+		PreparedStatement statement = null;
+		try {
+			connection = DriverManager.getConnection(url, "root", "root123");
+			System.out.println(connection);
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+//  		String sql="insert  into customers (id,name,birthday) values('3','wanger','1999-1-8')";
+//  		String sql="delete from customers where id='2'";
+
+		ResultSet rs = null;
+		/**
+		 * ResultSet的使用
+		 * 1.调用Statement.executeQuery()得到ResultSet实例
+		 * 2.遍历ResultSet,通过next方法及getXXX(index)
+		 * 3.关闭ResultSet实例
+		 * 
+		 */
+		try {
+//				
+
+			statement = connection.prepareStatement("select id,name,birthday from customers where id='3' ");
+			rs = statement.executeQuery();
+
+			while (rs.next()) {
+				System.out.println("-------------------");
+				System.out.println(rs.getInt(1));
+				System.out.println(rs.getString(2));
+				System.out.println(rs.getDate(3));
+			}
+
+			statement.executeUpdate();
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        if(rs!=null) {
+        	try {
+				rs.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+        }
+		if (statement != null) {
+			try {
+				statement.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		if (connection != null) {
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+	}
+}

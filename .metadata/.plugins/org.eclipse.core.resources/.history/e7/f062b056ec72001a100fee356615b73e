@@ -1,0 +1,14 @@
+package exception;
+
+import java.util.Scanner;
+
+public class TestCoursework {
+
+	public static void main(String[] args) {
+		Scanner in=new Scanner(System.in);
+        System.out.println("请输入1-3之间任意一个数字：");
+        
+
+	}
+
+}

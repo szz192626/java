@@ -1,0 +1,22 @@
+package supermarket1;
+//购物车类
+public class Shopping {
+	private static final int maxLen=10;
+	         static   int Len=0;
+	   private static Good[] data = new Good[maxLen];
+	   public static int getLen() {
+		   return Len;
+		    }	
+	   public  static Good[] getData() {
+		   return data;
+		   
+	   }
+	 public void printThis() {
+		 data[1]= new Good( 01,10.0," 可乐",3,10);
+		 data[1]= new Good( 02,10.0," xuebi",3,10);
+		 for(int i=0;i<data.length;i++) {
+			 System.out.println(data[i]);
+		 }
+	 }
+	
+}

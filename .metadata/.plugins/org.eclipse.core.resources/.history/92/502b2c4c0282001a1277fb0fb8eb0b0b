@@ -1,0 +1,21 @@
+package collection;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+public class MapHashMapDemo {
+
+	public static void main(String[] args) {
+		Map<Dog,String> map=new HashMap<Dog,String>();
+		map.put( new Dog("张三",4,"金毛"), "张阿黄");
+		map.put(new Dog("李四",4,"拉布拉多"), "李四");
+		map.put(new Dog("王二",4,"京巴"), "王京巴");
+		System.out.println(map);
+		System.out.println(map.size());
+		
+		map.put(new Dog("王二",5,"京巴"), "王京巴");
+		System.out.println(map.size());
+	}
+
+}

@@ -1,0 +1,15 @@
+package interfac;
+
+public class TestTheIfPoorDoor {
+
+	public static void main(String[] args) {
+		TheIfProofDoor tpf=new  TheIfProofDoor("Öý³É");
+		tpf.close();
+		tpf.lockup();
+		tpf.takePicture();
+		tpf.openLock();
+		tpf.open();
+  
+	}
+
+}

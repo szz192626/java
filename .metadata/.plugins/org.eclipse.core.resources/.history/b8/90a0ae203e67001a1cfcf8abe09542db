@@ -1,0 +1,13 @@
+package inherit;
+
+public class TestCat {
+
+	public static void main(String[] args) {
+		Pet cat =new Cat("奶茶",88,66);
+		System.out.println("---------");
+		Master master=new Master("方方");
+		master.feed(cat,"小鱼干" );
+		
+	}
+
+}

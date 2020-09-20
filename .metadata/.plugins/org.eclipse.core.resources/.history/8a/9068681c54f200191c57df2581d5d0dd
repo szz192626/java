@@ -1,0 +1,18 @@
+package szz;
+
+public class lianshou {
+
+	public static void main(String[] args) {
+	 float sNum=12;   int Num1=500;
+		sNum=sNum+5;
+		 Num1 = (int) sNum;
+		
+		
+		
+		
+		
+		
+
+	}
+
+}

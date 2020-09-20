@@ -1,0 +1,18 @@
+package supermarket1;
+
+public class Types {
+       
+	String cash;
+	String wechat;
+	String alipay;
+	public void  typesway() {
+		System.out.println("现金"+cash);
+		System.out.println("微信"+wechat);
+		System.out.println("支付宝"+alipay);
+		
+	}
+	
+	
+	
+	
+}

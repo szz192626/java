@@ -1,0 +1,28 @@
+package XH;
+
+public class jdff {
+ public static int getproduct(int x) {
+	 int result=1;
+	 for(int j=1;j<=x;j++) {
+		 result*=j;
+	 }
+	 return result;
+ }
+	
+	public static void main(String[] args) {
+	  int i=0;
+	  for(i=0;i<10;i++) {
+		  int res=getproduct(i);
+		
+		  if(res>400) {
+			  break;
+		  }
+	  }
+		System.out.println(i);
+		
+		
+		
+
+	}
+
+}

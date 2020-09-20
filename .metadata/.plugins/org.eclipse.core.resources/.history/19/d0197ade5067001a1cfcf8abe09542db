@@ -1,0 +1,23 @@
+package inherit;
+
+public class Cat extends Pet {
+	
+	public Cat() {
+		
+	}
+	
+	public Cat(String name,int Health,int Love) {
+		super(name,Health,Love);
+	}
+	
+	public void eatSomething(String food) {
+		if(this.getHealth()!=100){
+			
+			   this.setHealth(this.getHealth()+4<=100?this.getHealth()+4:100);
+			   System.out.println(this.getName()+"吃了"+food);
+	    }
+		else {
+				  System.out.println(this.getName()+"已经饱了，稍后再喂");
+			  }
+	}
+}

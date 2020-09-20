@@ -1,0 +1,15 @@
+package MXDX;
+
+public class Manager {
+    String username ="sunzz";
+    String password = "sun192626";
+    public String show() {
+    	System.out.println(username);
+    	System.out.println(password);
+    	return"ÓÃ»§Ãû"+username+"ÃÜÂë"+password;
+    
+    }
+	
+	
+	
+}

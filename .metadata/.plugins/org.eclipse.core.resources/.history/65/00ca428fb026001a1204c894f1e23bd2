@@ -1,0 +1,94 @@
+package supermarket1;
+
+public class Function {
+	public static int add() {
+		int No = 0;
+		int Number;
+		String name;
+		double weight;
+		double unitprice;
+		while (true) {
+			System.out.print("待输入记录的编号（输入“-1”退出）：")
+			int num = in.nextInt();
+			if (num != -1) {
+				System.out.print("  *编号：");
+				No = in.nextInt();
+				System.out.print("  *名称：");
+				name = in.next();
+				System.out.print("  *重量：");
+				weight = in.nextDouble();
+				System.out.print("  *单价: ");
+				unitprice = in.nextDouble();
+				System.out.print("  *数量：");
+				Number = in.nextInt();
+				Goods newData = new Goods(No, weight, name, unitprice, Number);
+				if (GoodsSet.addData(newData) == -1) {
+					System.out.println("数据溢出！");
+					return -2;
+				}
+			} else {
+				return -1;
+			}
+		}
+	}
+	public static int add1() {
+		int No = 0;
+		String name;
+		int kahao ;
+		while (true) {
+			System.out.print("待输入记录的编号（输入“-1”退出）：");
+			int num = in.nextInt();
+			if (num != -1) {
+				System.out.print("  *编号：");
+				No = in.nextInt();
+				System.out.print("  *姓名：");
+				name = in.next();
+				System.out.print("  *会员卡号：");
+				kahao = in.nextInt();
+				vips newData = new vips(No,  name, kahao);
+				if (vipset.addData(newData) == -1) {
+					System.out.println("数据溢出！");
+					return -2;
+				}
+			} else {
+				return -1;
+			}
+		}
+	}
+	public static void scan() {
+		while (true) {
+			System.out.print("请输入购买商品的编号（输入“-1”退出）：");
+			int  number = in.nextInt();
+			if (number != -1) {
+					if ((i = GoodsSet.searchNumber(number)) != -1){
+						System.out.print("请输入购买此商品的数量：");
+						int num = in.nextInt();	
+						if (num > i) {
+							System.out.print("库存不足！请重新输入购买此商品的数量：");
+							num = in.nextInt();
+	                }
+						else{
+						        int m =	GoodsSet.search(number);						   GoodsSet.getData(m).setNumber(GoodsSet.getData(m).getNumber()-num); 
+						        System.out.print("商品购买成功");
+						        Goods newData = new Goods( GoodsSet.getData(m).getNo(),  
+						        		GoodsSet.getData(m).getWeight(), 
+						        		GoodsSet.getData(m).getName(),  
+						        		GoodsSet.getData(m).getUnitprice(), num);
+								if (Cart.addData(newData) == -1) {
+									System.out.println("数据溢出！");
+									return ;
+								}
+						}
+				    }
+					else {
+						System.out.println("此商品不存在！");
+						}
+			   } 
+			else{
+				System.out.println("购买商品结束！");
+				break;
+			}
+		}
+	}
+
+}

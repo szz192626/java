@@ -1,0 +1,31 @@
+package generics;
+
+public class Box<T,M> {
+     private T thing;
+     private M madeof;
+     public Box() {
+    	 
+     }
+     public Box(T thing,M madeof) {
+    	this.thing=thing;
+    	this.madeof=madeof;
+     }
+     
+	public T getThing() {
+		return thing;
+	}
+	public void setThing(T thing) {
+		this.thing = thing;
+	}
+	public M getMadeof() {
+		return madeof;
+	}
+	public void setMadeof(M madeof) {
+		this.madeof = madeof;
+	}
+    public String toString() {
+    	return"装的是"+this.thing+",是由"+this.madeof+"制成的";
+    }
+     
+     
+}

@@ -1,0 +1,46 @@
+package supermarket1;
+
+import java.util.Scanner;
+
+public class Cashier {
+          public  void  cashier() {
+        	  int thirdNum=0;
+        	  Scanner reader=new Scanner(System.in);
+        String	 username1="szz";
+        String   password1="cmy520";
+        String username=null,password=null;
+      		boolean flag = true;
+    		do {
+    		   System.out.println("请输入用户名：");
+    		   username=reader.next();
+    		   System.out.println("请输入密码：");
+    		   password = reader.next();
+    			   if(username.equals(username1)&& password.equals(password1)) {
+    			     System.out.println("登入成功。"); 
+    			     flag = false;
+    			   }else {
+    			     System.out.println("用户名或密码输入错误，请重新输入。");
+    			   }
+    			        
+    	}while(flag);
+
+      				
+             for(int i=1;i<40;i++) {
+            	 System.out.println('=');
+             }
+            	 System.out.println("欢迎进入收银员系统！");
+            	 System.out.println("\t.1查找商品：");
+            	 System.out.println("\t.2购买商品：");
+            	 System.out.println("\t.3输出所购商品信息：");
+            	 System.out.println("\t.4活动期间打折：");
+            	 System.out.println("\t.5会员查询：");
+            	 System.out.println("\t.6会员结账");
+            	 System.out.println("\t.7退出收银员系统");
+            	 for(int i=0;i<40;i++) {
+            		 System.out.println('=');
+            	 }
+            	 System.out.println();
+            	 System.out.println("请输入命令：");
+             }
+          }
+}

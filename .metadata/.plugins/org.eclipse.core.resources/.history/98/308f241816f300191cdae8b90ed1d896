@@ -1,0 +1,15 @@
+package D5;
+
+public class SSD {
+
+	public static void main(String[] args) {
+		int HSD=37;
+		System.out.println(HSD*(5/9+32));
+		
+		
+		
+		
+
+	}
+
+}

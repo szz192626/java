@@ -1,0 +1,63 @@
+package FF;
+
+import java.util.Scanner;
+
+public class HFSZFFSZ {
+
+	public static void main(String[] args) {
+	 int []a=new int[] {0,6,4,2,1,5,1,9,7,3};
+			 int num1=0,num2=0;
+			 for(int i=0;i<a.length;i++) {
+				 if(a[i]==1||a[i]==2||a[i]==3) {
+				num1++;
+					
+					 }else {
+				 num2++;
+					 }
+			 }
+	 System.out.println("合法数字的个数为："+num1);
+	 System.out.println("非法数字的个数为："+num2);
+			
+			
+
+			
+		}
+}
+		
+		
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+	
+
+

@@ -1,0 +1,49 @@
+package jdbcdemo;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+import org.junit.Test;
+
+
+/**
+ * 1.将数据库驱动程序加入项目
+ * 2.调用Class.forName(驱动程序类名称)来加载对应数据库的驱动程序
+ * 3.调用DriverManager.getConnection(url,username,password)来得到数据库链接
+ * 4.关闭第三步获得的数据库链接
+ */
+public class Demo01_TestDriver {
+     @Test
+      public void testDriverandGetConnertion() {
+    	 try {
+			Class.forName("com.mysql.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	 String url="jdbc:mysql://localhost:3306/myjavadb";
+    	 Connection connection=null;
+    	 try {
+			 connection=DriverManager.getConnection(url,"root","root123");
+			 System.out.println(connection);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+    	 if(connection!=null) {
+    		 try {
+				connection.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+    	 }
+    	 
+     }
+	
+	
+	
+	
+}
